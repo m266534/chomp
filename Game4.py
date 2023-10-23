@@ -44,7 +44,7 @@ for _ in range(7):
     background.blit(seagrass, (x, screen_height-tile_size*2+20))
 
 #load game font
-custom_font = pygame.font.Font("../chomp/assets/fonts/Black_Crayon.ttf", 128)
+custom_font = pygame.font.Font("../chomp/assets/fonts/Black_Crayon.ttf", 75)
 
 #create the text "chomp" and display it on the screen
 text = custom_font.render("Chomp", True, (255, 69, 0))
@@ -59,7 +59,7 @@ while running:
     screen.blit(background, (0,0))
 
     #draw the text
-    screen.blit(text, (screen_width/2 - text.get_width()/2, screen_height/2 - text.get_height()/2))
+    screen.blit(text, (screen_width/2 - text.get_width()/2, screen_height/15 - text.get_height()/15))
 
     #update the display
     pygame.display.flip()
