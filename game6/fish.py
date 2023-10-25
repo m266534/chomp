@@ -13,7 +13,7 @@ class Fish(pygame.sprite.Sprite):
         super().__init__()
 
         #load an image from the disk. You can also create a surface with the pygame.Surface((w,h))
-        self.image = pygame.image.load("assets/sprites/green_fish.png").convert()
+        self.image = pygame.image.load("../assets/sprites/green_fish.png").convert()
         self.image = pygame.transform.flip(self.image, True, False)
         #set the transparency values
         self.image.set_colorkey((0,0,0))
