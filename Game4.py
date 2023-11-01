@@ -2,7 +2,7 @@ import pygame
 import sys
 import random
 from fish import Fish, fishes
-from fish_2 import fishes_more
+from fish_2 import Fish_2, fishes_more
 #imitialize Pygame
 pygame.init()
 
@@ -62,7 +62,7 @@ draw_background(background)
 for _ in range(5):
     fishes.add(Fish(random.randint(screen_width, screen_width*2),random.randint(tile_size, screen_height - tile_size)))
 for __ in range(5):
-    fishes_more.add(Fish(random.randint(screen_width, screen_width * 2), random.randint(tile_size, screen_height - tile_size)))
+    fishes_more.add(Fish_2(random.randint(-screen_width, 0), random.randint(tile_size, screen_height - tile_size)))
 
 
 #main code
@@ -83,6 +83,11 @@ while running:
         if fish.rect.x < -fish.rect.width:
             fishes.remove(fish)
             fishes.add(Fish(screen_width, random.randint(tile_size, screen_height - tile_size)))
+
+    # for fish_2 in fishes_more:
+    #     if fish_2.rect.x > fish_2.rect.width * 2:
+    #         fishes_more.remove(fish_2)
+    #         fishes_more.add(Fish_2(0, random.randint(tile_size, screen_height - tile_size)))
     #draw game objects
     fishes.draw(screen)
     fishes_more.draw(screen)

@@ -1,20 +1,20 @@
 import pygame
 import random
 
-MIN_SPEED = -.5
-MAX_SPEED = -3
+MIN_SPEED = .5
+MAX_SPEED = 3
 
 
 #sublcassing the Sprite by calling the base initializer before adding the Sprite to Groups
-class Fish_2(pygame.sprite.Sprite):
+class Fish(pygame.sprite.Sprite):
     #constructor. Pass in its x and y position and/or the color and dimensions of the block
     def __init__(self, x, y):
         #inherit from the parent class (Sprite)
         super().__init__()
 
         #load an image from the disk. You can also create a surface with the pygame.Surface((w,h))
-        self.image = pygame.image.load("assets/sprites/green_fish.png").convert()
-        self.image = pygame.transform.flip(self.image, False, False)
+        self.image = pygame.image.load("../game7/assets/sprites/green_fish.png").convert()
+        self.image = pygame.transform.flip(self.image, True, False)
         #set the transparency values
         self.image.set_colorkey((0,0,0))
 
@@ -34,4 +34,4 @@ class Fish_2(pygame.sprite.Sprite):
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
-fishes_more = pygame.sprite.Group()
+fishes = pygame.sprite.Group()

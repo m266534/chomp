@@ -8,7 +8,7 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
 
         #load an image from the disk. You can also create a surface with the pygame.Surface((w,h))
-        self.forward_image = pygame.image.load("../game6/assets/sprites/orange_fish.png").convert()
+        self.forward_image = pygame.image.load("../game7/assets/sprites/orange_fish.png").convert()
         # set the transparency values
         self.forward_image.set_colorkey((0, 0, 0))
         self.reverse_image = pygame.transform.flip(self.forward_image, True, False)
