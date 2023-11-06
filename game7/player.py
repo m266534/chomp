@@ -45,6 +45,8 @@ class Player(pygame.sprite.Sprite):
     def update(self):
         self.x += self.x_velocity
         self.y += self.y_velocity
+        self.x = max(0, min(self.x, SCREEN_WIDTH - self.rect.width))
+        self.y = max(0, min(self.y, SCREEN_HEIGHT - self.rect.height))
         self.rect.x = self.x
         self.rect.y = self.y
 

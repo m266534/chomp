@@ -1,6 +1,9 @@
 import pygame
 import sys
 import random
+
+import pygame.mouse
+
 from fish import Fish, fishes
 from player import Player
 from game_parameters import *
@@ -54,6 +57,11 @@ while lives > 0:
                 player.move_left()
             if event.key ==pygame.K_RIGHT:
                 player.move_right()
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                click_x, click_y = event.pos
+                player.rect.center = (click_x, click_y)
 
 
     #update game objects

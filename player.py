@@ -11,7 +11,17 @@ class Player(pygame.sprite.Sprite):
         self.foward_image = pygame.image.load("../chomp/assets/sprites/orange_fish.png").convert()
         # set the transparency values
         self.foward_image.set_colorkey((0, 0, 0))
+        size = self.foward_image.get_size()
+        newsize = (size[0] * 1.5, size[1] * 1.5)
+        self.foward_image = pygame.transform.scale(self.foward_image, newsize)
+        self.reverse_image = pygame.transform.scale(self.foward_image, newsize)
         self.reverse_image = pygame.transform.flip(self.foward_image, True, False)
+        self.upwards_image = pygame.transform.scale(self.foward_image, newsize)
+        self.upwards_image = pygame.transform.rotate(self.foward_image, 90)
+        self.downward_image = pygame.transform.scale(self.foward_image, newsize)
+        self.downward_image = pygame.transform.rotate(self.foward_image, 270)
+
+
 
         #fetch the rectangle object that has the dimensions of the image
         self.image = self.foward_image
@@ -25,9 +35,11 @@ class Player(pygame.sprite.Sprite):
 
     def move_up(self):
         self.y_velocity = - PLAYER_SPEED
+        self.image = self.upwards_image
 
     def move_down(self):
         self.y_velocity = PLAYER_SPEED
+        self.image = self.downward_image
 
     def move_left(self):
         self.x_velocity = -1 * PLAYER_SPEED
