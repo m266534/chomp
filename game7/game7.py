@@ -60,8 +60,8 @@ while lives > 0:
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
-                click_x, click_y = event.pos
-                player.rect.center = (click_x, click_y)
+                player.x, player.y = event.pos
+                player.rect.center = (player.x, player.y)
 
 
     #update game objects
