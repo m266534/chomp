@@ -4,6 +4,7 @@ import random
 from fish import Fish, fishes
 from game_parameters import *
 from enemy import Enemy, enemies
+from bullet import Bullet, bullets
 
 
 def draw_background(screen):
@@ -45,3 +46,7 @@ def add_fish(num_fish):
 def add_enemies(num_enemies):
     for _ in range(num_enemies):
         enemies.add(Enemy(random.randint(SCREEN_WIDTH, SCREEN_WIDTH * 2), random.randint(TILE_SIZE, SCREEN_HEIGHT - TILE_SIZE)))
+
+def add_bullets(num_bullets, pos, angle):
+    for _ in range(num_bullets):
+        bullets.add(Bullet(pos[0], pos[1], angle))
